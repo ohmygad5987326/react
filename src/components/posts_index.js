@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 
 
 
+
+
+
 class PostsIndex extends Component {
   componentWillMount() {
     this.props.fetchPosts();
@@ -27,77 +30,103 @@ class PostsIndex extends Component {
 
   render() {
     return (
-      <div>
-        <div className="wrapper">
-            <div className="overlay"></div>
-            <nav className="navbar navbar-inverse navbar-fixed-top sidebar-wrapper"  role="navigation">
-                <ul className="nav sidebar-nav">
-                    <li className="sidebar-brand">
-                        <a href="#">
-                            Brand
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Events</a>
-                    </li>
-                    <li>
-                        <a href="#">Team</a>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Works <span className="caret"></span></a>
-                        <ul className="dropdown-menu" role="menu">
-                            <li className="dropdown-header">Dropdown heading</li>
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/maridlcrmn">Follow me</a>
-                    </li>
-                </ul>
-            </nav>
-            <div className="page-content-wrapper">
-                <button type="button" className="hamburger is-closed" data-toggle="offcanvas">
-                    <span className="hamb-top"></span>
-                    <span className="hamb-middle"></span>
-                    <span className="hamb-bottom"></span>
-                </button>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 col-lg-offset-2">
-                          <div className="text-xs-right">
-                            <Link to="/posts/new" className="btn btn-primary">
-                              Add a Post
-                            </Link>
-                          </div>
-                              <h3>Posts</h3>
-                          <ul className="list-group">
-                            {this.renderPosts()}
-                          </ul>
-                        </div>
-                    </div>
-                </div>
+<div>
+
+<nav className="navbar navbar-inverse narbar-fixed-top" role="navigation">
+  <div className="navbar-header">
+    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+     </button>
+     <a className="navbar-brand" href="">FullStack Field</a>
+   </div>
+
+   <div className="collapse navbar-collapse bs-example-navbar-collapse-1">
+      <ul className ="nav navbar-nav navbar-right">
+        <li clasName="dropdown">
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown">Javascript</a>
+            <ul className="dropdown-menu">
+              <li>
+                <a href="##">1 Column Portfolio</a>
+              </li>
+              <li>
+                <a href="##">2 Column Portfolio</a>
+              </li>
+              <li>
+                <a href="##">Single Portfolio Item</a>
+              </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">Css</a>
+        </li>
+        <li>
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">Html</a>
+        </li>
+        <li>
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">Bootstarp</a>
+        </li>
+            <div className="text-xs-right">
+              <Link to="/posts/new" className="btn btn-primary">
+                Add a Post
+              </Link>
             </div>
+      </ul>
+   </div>
+</nav>
 
+                <h3>Posts</h3>
+            <ul className="list-group">
+              {this.renderPosts()}
+            </ul>
 
+  <div className="myCarousel carousel slide">
+    <ol className="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+ <div className="carousel-inner" >
+    <div className="item active">
+        <img src="../../img/slider1.jpg" className="fill"/>
+        <div className="carousel-caption">
+              <h2>Caption 1</h2>
         </div>
+    </div>
+    <div className="item">
+         <img src="../../img/slider2.jpg" className="fill"/>
+         <div className="carousel-caption">
+              <h2>Caption 2</h2>
+         </div>
+    </div>
+    <div className="item">
+         <img src="../../img/slider3.jpg" className="fill"/>
+         <div className="carousel-caption">
+              <h2>Caption 3</h2>
+         </div>
+    </div>
+    <div className="item">
+        <img src="../../img/slider4.jpg" className="fill"/>
+        <div className="carousel-caption">
+             <h2>Caption 4</h2>
+        </div>
+    </div>
+  </div>
+  <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span className="glyphicon glyphicon-chevron-left"></span>
+    <span className="sr-only">Previous</span>
+  </a>
+  <a className="right carousel-control" href="#myCarousel" data-slide="next">
+   <span className="glyphicon glyphicon-chevron-right"></span>
+   <span className="sr-only">Next</span>
+  </a>
+ </div>
+</div>
 
-      </div>
     );
   }
 }
